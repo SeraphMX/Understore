@@ -1,35 +1,33 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import CartSlide from '../components/CartSlide';
+import React from 'react'
+import { Outlet } from 'react-router-dom'
+import CartSlide from '../components/CartSlide'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 
 interface MainLayoutProps {
-  children?: React.ReactNode;
+  children?: React.ReactNode
 }
 
 export const MainLayoutContext = React.createContext<{
-  openCart: () => void;
+  openCart: () => void
 }>({
-  openCart: () => {},
-});
+  openCart: () => {}
+})
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
-  const [isCartOpen, setIsCartOpen] = React.useState(false);
-  const openCart = () => setIsCartOpen(true);
+  const [isCartOpen, setIsCartOpen] = React.useState(false)
+  const openCart = () => setIsCartOpen(true)
 
   return (
     <MainLayoutContext.Provider value={{ openCart }}>
-      <div className="min-h-screen flex flex-col">
+      <div className='min-h-screen flex flex-col'>
         <Navbar onCartClick={openCart} />
-        <main className="flex-grow container mx-auto px-4 py-8">
-          {children || <Outlet />}
-        </main>
+        <main className='flex-grow w-full mx-auto'>{children || <Outlet />}</main>
         <Footer />
         <CartSlide isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
       </div>
     </MainLayoutContext.Provider>
-  );
-};
+  )
+}
 
-export default MainLayout;
+export default MainLayout
