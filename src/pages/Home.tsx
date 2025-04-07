@@ -1,9 +1,8 @@
-import { Button, Input } from '@nextui-org/react'
+import { Button, Card, CardBody, Image, Input } from '@nextui-org/react'
 import {
   ArrowLeft,
   ArrowRight,
   FlaskRound as Flask,
-  Flower2,
   Leaf,
   Package,
   Search,
@@ -24,22 +23,22 @@ const promotions = [
   {
     id: 1,
     title: '30% de descuento en Flores',
-    description: 'En todas las semillas de flores durante esta semana',
-    image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946',
+    description: 'En compras mayores a una libra',
+    image: '/banners/banner-weed.webp',
     link: '/categoria/Flores'
   },
   {
     id: 2,
-    title: 'Nuevos Extractos Naturales',
-    description: 'Descubre nuestra nueva línea de extractos orgánicos',
-    image: 'https://images.unsplash.com/photo-1611073761523-8d1a35576b1e',
+    title: 'Nuevas semillas',
+    description: 'Descubre nuestra nueva colección de semillas de cannabis',
+    image: '/banners/banner-seeds.webp',
     link: '/categoria/Extractos'
   },
   {
     id: 3,
-    title: 'Kit de Jardinería Completo',
-    description: 'Todo lo que necesitas para comenzar tu jardín',
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b',
+    title: 'Extractos de alta calidad',
+    description: 'Conoce algunos de los mejores extractos del mercado',
+    image: '/banners/banner-concentrates.webp',
     link: '/categoria/Accesorios'
   }
 ]
@@ -47,7 +46,7 @@ const promotions = [
 const getCategoryIcon = (category: string) => {
   switch (category) {
     case 'Flores':
-      return <Flower2 className='w-12 h-12 mb-4' />
+      return <img src='https://images.unsplash.com/photo-1490750967868-88aa4486c946' alt='Flores' className='w-12 h-12 mb-4' />
     case 'Hortalizas':
       return <Leaf className='w-12 h-12 mb-4' />
     case 'Hierbas Aromáticas':
@@ -95,7 +94,7 @@ const Home = () => {
   }
 
   return (
-    <div className='space-y-12'>
+    <div className='space-y-12 px-8 py-8'>
       {/* Hero Slider Section */}
       <section className='relative h-[500px] overflow-hidden rounded-2xl'>
         {promotions.map((promo, index) => (
@@ -167,6 +166,17 @@ const Home = () => {
           </ol>
         </div>
 
+        {/* Búsqueda de Productos */}
+        <Link
+          to='/productos'
+          className='bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-2xl hover:shadow-lg transition-shadow group'
+        >
+          <Search className='w-12 h-12 text-green-600 mb-4' />
+          <h3 className='text-2xl font-bold mb-3'>Buscar Productos</h3>
+          <p className='text-gray-600 mb-4'>Explora nuestro catálogo completo de productos para tu jardín</p>
+          <span className='text-green-600 font-medium group-hover:underline'>Explorar catálogo →</span>
+        </Link>
+
         {/* Track Order */}
         <div className='bg-gradient-to-br from-purple-50 to-indigo-100 p-8 rounded-2xl'>
           <Package className='w-12 h-12 text-purple-600 mb-4' />
@@ -183,17 +193,6 @@ const Home = () => {
             </Button>
           </form>
         </div>
-
-        {/* Búsqueda de Productos */}
-        <Link
-          to='/productos'
-          className='bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-2xl hover:shadow-lg transition-shadow group'
-        >
-          <Search className='w-12 h-12 text-green-600 mb-4' />
-          <h3 className='text-2xl font-bold mb-3'>Buscar Productos</h3>
-          <p className='text-gray-600 mb-4'>Explora nuestro catálogo completo de productos para tu jardín</p>
-          <span className='text-green-600 font-medium group-hover:underline'>Explorar catálogo →</span>
-        </Link>
       </div>
 
       {/* Featured Products Section */}
@@ -212,15 +211,21 @@ const Home = () => {
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
           {categories.map((category) => (
             <Link
-              key={category}
-              to={`/categoria/${encodeURIComponent(category)}`}
-              className='bg-white rounded-lg p-6 text-center transition-transform hover:scale-105 hover:shadow-lg'
+              key={category.name}
+              to={`/categoria/${encodeURIComponent(category.name)}`}
+              className='transition-transform hover:scale-105 hover:shadow-lg'
             >
-              <div className='flex flex-col items-center'>
-                {getCategoryIcon(category)}
-                <h3 className='text-lg font-semibold text-gray-800 mb-2'>{category}</h3>
-                <p className='text-sm text-gray-600'>{products.filter((p) => p.category === category).length} productos</p>
-              </div>
+              <Card isPressable className='border border-transparent hover:border-primary/50 transition-colors'>
+                <CardBody className='p-0'>
+                  <div className='relative aspect-square'>
+                    <Image removeWrapper alt={category.name} className='object-cover w-full h-full' src={category.image} />
+                    <div className='absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4 z-10 flex-col justify-end'>
+                      <h3 className='text-white font-semibold text-2xl'>{category.name}</h3>
+                      <p className='text-sm text-gray-300'>{products.filter((p) => p.category === category.name).length} productos</p>
+                    </div>
+                  </div>
+                </CardBody>
+              </Card>
             </Link>
           ))}
         </div>
