@@ -1,4 +1,4 @@
-import { User } from '../types';
+import { User } from '../types'
 
 export const users: User[] = [
   {
@@ -28,11 +28,8 @@ export const users: User[] = [
     isApproved: true,
     role: 'staff'
   }
-];
+]
 
 export const findUser = (identifier: string, password: string): User | undefined => {
-  return users.find(user => 
-    (user.username === identifier || user.phoneNumber === identifier) && 
-    user.password === password
-  );
-};
+  return users.find((user) => (user.username === identifier || user.phoneNumber === identifier) && user.password === password)
+}
