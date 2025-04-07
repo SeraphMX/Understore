@@ -1,148 +1,123 @@
-import { Product, Unit } from '../types';
+import { Product } from '../types'
 
 export const products: Product[] = [
   {
     id: '1',
-    name: 'Semillas de Lavanda',
+    name: 'Acapulco',
+    slug: 'acapulco',
     description: 'Semillas de lavanda francesa, perfectas para jardines aromáticos',
-    price: 3.99,
+    price: 80,
     category: 'Flores',
     stock: 100,
     unit: ['g', 'oz', 'kg'],
     baseUnit: 'g',
-    imageUrl: 'https://images.unsplash.com/photo-1595159102181-86304d9d5903',
-    images: [
-      'https://images.unsplash.com/photo-1595159102181-86304d9d5903',
-      'https://images.unsplash.com/photo-1595159102181-86304d9d5904',
-      'https://images.unsplash.com/photo-1595159102181-86304d9d5905',
-      'https://images.unsplash.com/photo-1595159102181-86304d9d5906'
-    ],
+    imageUrl: '/catalog/flower/acapulco.jpg',
+    images: ['/catalog/flower/acapulco.jpg'],
     rating: 4.8,
     reviews: 42
   },
   {
     id: '2',
-    name: 'Semillas de Girasol',
+    name: 'Biscotti',
+    slug: 'biscotti',
     description: 'Girasoles gigantes, ideales para jardines ornamentales',
-    price: 4.50,
+    price: 4.5,
     category: 'Flores',
     stock: 150,
     unit: ['g', 'oz'],
     baseUnit: 'g',
-    imageUrl: 'https://images.unsplash.com/photo-1597848212624-a19eb35e2651',
-    images: [
-      'https://images.unsplash.com/photo-1597848212624-a19eb35e2651',
-      'https://images.unsplash.com/photo-1597848212624-a19eb35e2652',
-      'https://images.unsplash.com/photo-1597848212624-a19eb35e2653'
-    ],
+    imageUrl: '/catalog/flower/biscotti.jpg',
+    images: ['/catalog/flower/biscotti.jpg'],
     rating: 4.7,
     reviews: 38
   },
   {
     id: '3',
-    name: 'Semillas de Rosa',
+    name: 'Blue Dream',
+    slug: 'blue-dream',
     description: 'Rosas híbridas de té, variedad premium',
     price: 6.99,
     category: 'Flores',
     stock: 80,
     unit: 'pz',
     baseUnit: 'pz',
-    imageUrl: 'https://images.unsplash.com/photo-1496062031456-07b8f162a322',
-    images: [
-      'https://images.unsplash.com/photo-1496062031456-07b8f162a322',
-      'https://images.unsplash.com/photo-1496062031456-07b8f162a323',
-      'https://images.unsplash.com/photo-1496062031456-07b8f162a324'
-    ],
+    imageUrl: '/catalog/flower/blue-dream.jpg',
+    images: ['/catalog/flower/blue-dream.jpg'],
     rating: 4.9,
     reviews: 55
   },
   {
     id: '4',
-    name: 'Semillas de Margarita',
+    name: 'Chocolope',
+    slug: 'chocolope',
     description: 'Margaritas blancas, perfectas para borduras',
-    price: 3.50,
+    price: 3.5,
     category: 'Flores',
     stock: 120,
     unit: ['g', 'oz'],
     baseUnit: 'g',
-    imageUrl: 'https://images.unsplash.com/photo-1560790671-b76ca4de55ef',
-    images: [
-      'https://images.unsplash.com/photo-1560790671-b76ca4de55ef',
-      'https://images.unsplash.com/photo-1560790671-b76ca4de55eg',
-      'https://images.unsplash.com/photo-1560790671-b76ca4de55eh'
-    ],
+    imageUrl: '/catalog/flower/chocolope.jpg',
+    images: ['/catalog/flower/chocolope.jpg'],
     rating: 4.5,
     reviews: 29
   },
   {
     id: '5',
-    name: 'Semillas de Dalia',
+    name: 'Gorila Glue #4',
+    slug: 'gorilla-glue-4',
     description: 'Dalias variadas de colores brillantes',
     price: 5.99,
     category: 'Flores',
     stock: 90,
     unit: ['g', 'oz', 'kg'],
     baseUnit: 'g',
-    imageUrl: 'https://images.unsplash.com/photo-1595178302776-fa04e6d45957',
-    images: [
-      'https://images.unsplash.com/photo-1595178302776-fa04e6d45957',
-      'https://images.unsplash.com/photo-1595178302776-fa04e6d45958',
-      'https://images.unsplash.com/photo-1595178302776-fa04e6d45959'
-    ],
+    imageUrl: '/catalog/flower/gg-4.jpg',
+    images: ['/catalog/flower/gg-4.jpg'],
     rating: 4.6,
     reviews: 31
   },
   {
     id: '6',
-    name: 'Tomate Cherry',
+    name: 'Jack Herer',
+    slug: 'jack-herer',
     description: 'Variedad dulce y productiva',
     price: 4.99,
-    category: 'Hortalizas',
+    category: 'Flores',
     stock: 200,
     unit: 'g',
     baseUnit: 'g',
-    imageUrl: 'https://images.unsplash.com/photo-1566055809641-b834dd267da7',
-    images: [
-      'https://images.unsplash.com/photo-1566055809641-b834dd267da7',
-      'https://images.unsplash.com/photo-1566055809641-b834dd267da8',
-      'https://images.unsplash.com/photo-1566055809641-b834dd267da9'
-    ],
+    imageUrl: '/catalog/flower/jack-herer.jpg',
+    images: ['/catalog/flower/jack-herer.jpg'],
     rating: 4.8,
     reviews: 65
   },
   {
     id: '7',
-    name: 'Pimiento Californiano',
+    name: 'Lemon Haze',
+    slug: 'lemon-haze',
     description: 'Pimientos dulces multicolor',
-    price: 4.50,
-    category: 'Hortalizas',
+    price: 4.5,
+    category: 'Flores',
     stock: 150,
     unit: 'g',
     baseUnit: 'g',
-    imageUrl: 'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83',
-    images: [
-      'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83',
-      'https://images.unsplash.com/photo-1563565375-f3fdfdbefa84',
-      'https://images.unsplash.com/photo-1563565375-f3fdfdbefa85'
-    ],
+    imageUrl: '/catalog/flower/lemon-haze.jpg',
+    images: ['/catalog/flower/lemon-haze.jpg'],
     rating: 4.7,
     reviews: 48
   },
   {
     id: '8',
-    name: 'Zanahoria Nantesa',
+    name: 'Skunk #1',
+    slug: 'skunk-1',
     description: 'Zanahorias dulces y crujientes',
     price: 3.99,
-    category: 'Hortalizas',
+    category: 'Flores',
     stock: 180,
     unit: 'g',
     baseUnit: 'g',
-    imageUrl: 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37',
-    images: [
-      'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37',
-      'https://images.unsplash.com/photo-1598170845058-32b9d6a5da38',
-      'https://images.unsplash.com/photo-1598170845058-32b9d6a5da39'
-    ],
+    imageUrl: '/catalog/flower/skunk-1.jpg',
+    images: ['/catalog/flower/skunk-1.jpg'],
     rating: 4.6,
     reviews: 42
   },
@@ -150,7 +125,7 @@ export const products: Product[] = [
     id: '9',
     name: 'Lechuga Romana',
     description: 'Lechuga crujiente y sabrosa',
-    price: 3.50,
+    price: 3.5,
     category: 'Hortalizas',
     stock: 160,
     unit: 'g',
@@ -222,7 +197,7 @@ export const products: Product[] = [
     id: '13',
     name: 'Cilantro',
     description: 'Cilantro fresco y aromático',
-    price: 3.50,
+    price: 3.5,
     category: 'Hierbas Aromáticas',
     stock: 130,
     unit: 'g',
@@ -542,14 +517,15 @@ export const products: Product[] = [
     rating: 4.7,
     reviews: 134
   }
-];
+]
 
 export const categories = [
-  'Flores',
-  'Hortalizas',
-  'Hierbas Aromáticas',
-  'Extractos',
-  'Sustratos',
-  'Accesorios',
-  'Fertilizantes'
-];
+  { name: 'Flores', image: 'categories/flores.jpg' },
+  { name: 'Prerolados', image: 'categories/prerolados.jpg' },
+  { name: 'Concentrados', image: 'categories/concentrados.jpg' },
+  { name: 'Comestibles', image: 'categories/comestibles.jpg' },
+  { name: 'Dispositivos', image: 'categories/dispositivos.jpg' },
+  { name: 'Semillas', image: 'categories/semillas.jpg' },
+  { name: 'Cultivo', image: 'categories/cultivo.jpg' },
+  { name: 'Accesorios', image: 'categories/accesorios.jpg' }
+]
