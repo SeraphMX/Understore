@@ -22,7 +22,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     <MainLayoutContext.Provider value={{ openCart }}>
       <div className='min-h-screen flex flex-col'>
         <Navbar onCartClick={openCart} />
-        <main className='flex-grow w-full mx-auto'>{children || <Outlet />}</main>
+        <main className='flex-grow mt-20 w-full mx-auto'>{children || <Outlet />}</main>
         <Footer />
         <CartSlide isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
       </div>
