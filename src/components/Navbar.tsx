@@ -46,11 +46,11 @@ const Navbar: React.FC<NavbarProps> = ({ onCartClick }) => {
   }
 
   return (
-    <nav className='bg-primary text-white relative'>
+    <nav className='bg-primary text-white  fixed top-0 left-0 right-0 z-50 shadow-xl'>
       <div className='container mx-auto px-4'>
-        <div className='flex items-center justify-between h-16'>
+        <div className='flex items-center justify-between '>
           <Link to='/' className='flex items-center space-x-2' onClick={closeMobileMenu}>
-            <img src={logo} alt='Logo' className='h-12' />
+            <img src={logo} alt='Logo' className='h-12 my-4' />
           </Link>
 
           {/* Desktop Menu */}
@@ -127,9 +127,21 @@ const Navbar: React.FC<NavbarProps> = ({ onCartClick }) => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className='md:hidden p-2 hover:bg-green-700 rounded-lg' onClick={toggleMobileMenu}>
-            {isMobileMenuOpen ? <X className='h-6 w-6' /> : <MenuIcon className='h-6 w-6' />}
-          </button>
+          <div className='flex gap-3 md:hidden'>
+            {isAuthenticated && user?.isApproved && (
+              <>
+                <NotificationsDropdown onNotificationClick={handleNotificationClick} />
+                <Badge content={itemCount} color='danger' size='sm' className='text-tiny' isInvisible={itemCount === 0}>
+                  <button onClick={onCartClick} className='hover:text-green-500'>
+                    <ShoppingCart className='h-6 w-6' />
+                  </button>
+                </Badge>
+              </>
+            )}
+            <button className=' p-2 hover:bg-green-700 rounded-lg' onClick={toggleMobileMenu}>
+              {isMobileMenuOpen ? <X className='h-6 w-6' /> : <MenuIcon className='h-6 w-6' />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -141,7 +153,7 @@ const Navbar: React.FC<NavbarProps> = ({ onCartClick }) => {
         onClick={closeMobileMenu}
       />
       <div
-        className={`absolute top-16 left-0 right-0 bg-primary z-50 transition-transform duration-300 ease-in-out transform ${
+        className={`absolute top-0 left-0 right-0 bg-primary z-50 transition-transform duration-300 ease-in-out transform ${
           isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
         } md:hidden`}
       >
