@@ -34,7 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <Link to={`/productos/${product.id}`}>
           <h3 className='font-semibold text-lg mb-2 hover:text-green-600'>{product.name}</h3>
         </Link>
-        <p className='text-gray-600 text-sm mb-2'>{product.description}</p>
+        {/* <p className='text-gray-600 text-sm mb-2'>{product.description}</p> */}
         <div className='flex items-center mb-2'>
           <div className='flex items-center'>
             {[...Array(5)].map((_, i) => (
