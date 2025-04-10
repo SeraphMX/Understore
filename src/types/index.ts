@@ -5,6 +5,8 @@ export interface Product {
   name: string
   slug: string
   description: string
+  type?: string
+  strain?: string
   price: number
   category: string
   stock: number
@@ -14,6 +16,7 @@ export interface Product {
   images?: string[]
   rating: number
   reviews: number
+  featured?: boolean
 }
 
 export interface CartItem {
