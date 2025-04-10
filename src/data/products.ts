@@ -634,16 +634,91 @@ export const products: Product[] = [
     rating: 4.9,
     reviews: 47,
     featured: true
+  },
+  {
+    id: 'p1',
+    name: 'Baby Jeeter',
+    slug: 'baby-jeeter-pink-lemon',
+    strain: 'Pink Lemon',
+    type: 'Híbrido',
+    description:
+      'Prerolado artesanal con flores de Pink Lemon, una cepa híbrida que equilibra efectos cerebrales creativos con relajación corporal. Envuelto en papel orgánico y filtro de vidrio, ideal para sesiones cortas pero potentes.',
+    price: 1500,
+    category: 'Prerolados',
+    stock: 35,
+    unit: ['pz'],
+    baseUnit: 'pz',
+    imageUrl: '/catalog/prerolls/prerolados-1.jpg',
+    images: ['/catalog/prerolls/prerolados-1.jpg'],
+    rating: 4.6,
+    reviews: 40,
+    featured: true
+  },
+  {
+    id: 'p2',
+    name: 'Boutiq',
+    slug: 'boutiq',
+    type: 'Sativa',
+    description:
+      'Prerolado premium con flores sativas seleccionadas, perfecto para energía y enfoque. Cultivado orgánicamente y enrollado con precisión para una combustión lenta y pareja.',
+    price: 1200,
+    category: 'Prerolados',
+    stock: 28,
+    unit: ['pz'],
+    baseUnit: 'pz',
+    imageUrl: '/catalog/prerolls/prerolados-2.jpg',
+    images: ['/catalog/prerolls/prerolados-2.jpg'],
+    rating: 4.3,
+    reviews: 32,
+    featured: false
+  },
+  {
+    id: 'p3',
+    name: 'Jungle Boys',
+    slug: 'jungle-boys-ice-cream-float',
+    strain: 'Ice Cream Float',
+    type: 'Mix',
+    description:
+      'Mezcla exclusiva de flores Ice Cream Float (híbrido cremoso con notas dulces) y extractos de alta potencia. Prerolado de combustión lenta, ideal para disfrutar sabores complejos y efectos balanceados.',
+    price: 1300,
+    category: 'Prerolados',
+    stock: 25,
+    unit: ['pz'],
+    baseUnit: 'pz',
+    imageUrl: '/catalog/prerolls/prerolados-3.jpg',
+    images: ['/catalog/prerolls/prerolados-3.jpg'],
+    rating: 4.7,
+    reviews: 45,
+    featured: true
+  },
+  {
+    id: 'p4',
+    name: 'Jungle Boys',
+    slug: 'jungle-boys-ny-zoo',
+    strain: 'NY ZOO',
+    type: 'Mix',
+    description:
+      'Combinación premium de la cepa NY ZOO (híbrido con dominancia índica) y kief de trichomas. Aroma terroso con toques cítricos y efecto relajante profundo. Envuelto en papel de arroz sin blanquear.',
+    price: 1300,
+    category: 'Prerolados',
+    stock: 22,
+    unit: ['pz'],
+    baseUnit: 'pz',
+    imageUrl: '/catalog/prerolls/prerolados-4.jpg',
+    images: ['/catalog/prerolls/prerolados-4.jpg'],
+    rating: 4.8,
+    reviews: 38,
+    featured: true
   }
 ]
 
 export const categories = [
-  { name: 'Flores', image: 'categories/flores.jpg' },
-  { name: 'Prerolados', image: 'categories/prerolados.jpg' },
-  { name: 'Concentrados', image: 'categories/concentrados.jpg' },
-  { name: 'Comestibles', image: 'categories/comestibles.jpg' },
-  { name: 'Dispositivos', image: 'categories/dispositivos.jpg' },
-  { name: 'Semillas', image: 'categories/semillas.jpg' },
-  { name: 'Cultivo', image: 'categories/cultivo.jpg' },
-  { name: 'Accesorios', image: 'categories/accesorios.jpg' }
+  { name: 'Flores', image: 'categories/flores.jpg', description: 'Flores de cannabis de alta calidad' },
+  { name: 'Prerolados', image: 'categories/prerolados.jpg', description: 'Prerolados de cannabis de alta calidad' },
+  { name: 'Concentrados', image: 'categories/concentrados.jpg', description: 'Concentrados de cannabis' },
+  { name: 'Comestibles', image: 'categories/comestibles.jpg', description: 'Comestibles de cannabis' },
+  { name: 'Dispositivos', image: 'categories/dispositivos.jpg', description: 'Dispositivos para vaporizacion de hierba y concentrados' },
+  { name: 'Semillas', image: 'categories/semillas.jpg', description: 'Selección de semillas de cannabis' },
+  { name: 'Cultivo', image: 'categories/cultivo.jpg', description: 'Productos para el cultivo de cannabis' },
+  { name: 'Accesorios', image: 'categories/accesorios.jpg', description: 'Accesorios para el consumo y conservacion de cannabis' }
 ]

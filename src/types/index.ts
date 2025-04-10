@@ -1,4 +1,4 @@
-export type Unit = 'g' | 'oz' | 'kg' | 'pz'
+export type Unit = 'g' | 'oz' | 'kg' | 'pz' | 'lb'
 
 export interface Product {
   id: string
@@ -146,6 +146,7 @@ export const convertUnit = (value: number, fromUnit: Unit, toUnit: Unit): number
   const toGrams = {
     g: 1,
     oz: 28.35,
+    lb: 453.592,
     kg: 1000,
     pz: 1 // For pieces, we maintain the same value
   }
@@ -160,13 +161,15 @@ export const convertUnit = (value: number, fromUnit: Unit, toUnit: Unit): number
 export const formatUnit = (unit: Unit): string => {
   switch (unit) {
     case 'g':
-      return 'gramos'
+      return 'gramo'
     case 'oz':
-      return 'onzas'
+      return 'onza'
+    case 'lb':
+      return 'libra'
     case 'kg':
-      return 'kilogramos'
+      return 'kilogramo'
     case 'pz':
-      return 'piezas'
+      return 'pieza'
     default:
       return unit
   }
