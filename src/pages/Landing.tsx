@@ -100,7 +100,7 @@ const Landing = () => {
       default:
         return (
           <div className='bg-white p-6 rounded-xl shadow-lg'>
-            <h3 className='text-xl font-semibold mb-6'>Solicita tu acceso</h3>
+            <h3 className='text-xl md:text-2xl font-semibold mb-6'>Solicita tu acceso</h3>
             <form onSubmit={handleSubmit} className='space-y-4'>
               <Input
                 type='text'
@@ -155,7 +155,9 @@ const Landing = () => {
             <img src={logo} alt='' className='h-36' />
           </div>
           <h1 className='text-4xl font-bold text-gray-900 mb-4'>Bienvenido</h1>
-          <p className='text-xl text-gray-600 max-w-2xl mx-auto'>Productos exlusivos para miembros</p>
+          <p className='text-xl text-gray-600 max-w-2xl mx-auto'>
+            Nuestro sitio y productos son <strong>exclusivos para miembros</strong> del club
+          </p>
         </div>
 
         {/* Main Content */}
@@ -163,15 +165,15 @@ const Landing = () => {
           <div className='grid md:grid-cols-2 gap-12 items-center'>
             {/* Left Column - Benefits */}
             <div className='space-y-6'>
-              <h2 className='text-2xl font-semibold mb-6'>¿Por qué unirte a nuestro club?</h2>
+              <h2 className='text-xl md:text-2xl font-semibold mb-6'>¿Que ofrecemos a nuestros miembros?</h2>
               <div className='space-y-4'>
                 <div className='flex items-start'>
                   <div className='flex-shrink-0 h-6 w-6 text-green-600'>✓</div>
-                  <p className='ml-2'>Acceso a productos exclusivos y de alta calidad</p>
+                  <p className='ml-2'>Productos exclusivos y de alta calidad</p>
                 </div>
                 <div className='flex items-start'>
                   <div className='flex-shrink-0 h-6 w-6 text-green-600'>✓</div>
-                  <p className='ml-2'>Compras rápidas y seguras</p>
+                  <p className='ml-2'>Compras rápidas, discretas y seguras</p>
                 </div>
                 <div className='flex items-start'>
                   <div className='flex-shrink-0 h-6 w-6 text-green-600'>✓</div>
