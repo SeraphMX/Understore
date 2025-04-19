@@ -20,21 +20,21 @@ const promotions = [
     title: '30% de descuento en Flores',
     description: 'En compras mayores a una libra',
     image: '/banners/banner-weed.webp',
-    link: '/categoria/Flores'
+    link: '/categoria/flores'
   },
   {
     id: 2,
     title: 'Nuevas semillas',
     description: 'Descubre nuestra nueva colección de semillas de cannabis',
     image: '/banners/banner-seeds.webp',
-    link: '/categoria/Extractos'
+    link: '/categoria/concentrados'
   },
   {
     id: 3,
     title: 'Extractos de alta calidad',
     description: 'Conoce algunos de los mejores extractos del mercado',
     image: '/banners/banner-concentrates.webp',
-    link: '/categoria/Accesorios'
+    link: '/categoria/accesorios'
   }
 ]
 
@@ -215,7 +215,7 @@ const Home = () => {
             >
               {categories.map((category) => (
                 <SwiperSlide key={category.name}>
-                  <Link to={`/categoria/${category.name}`} className='block'>
+                  <Link to={`/categoria/${category.slug}`} className='block'>
                     <Card className='border border-transparent hover:border-primary/50 transition-colors'>
                       <CardBody className='p-0'>
                         <div className='relative aspect-square'>
