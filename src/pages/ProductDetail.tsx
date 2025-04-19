@@ -16,9 +16,9 @@ import { ArrowLeft, CheckCircle2, Clock, Heart, Image as ImageIcon, Send, Shield
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import { LayoutContext } from '../components/Layout'
 import ProductGallery from '../components/ProductGallery'
 import { getProductReviews } from '../data/reviews'
+import { MainLayoutContext } from '../layouts/MainLayout'
 import { addToCart } from '../store/slices/cartSlice'
 import { addToFavorites, removeFromFavorites } from '../store/slices/favoritesSlice'
 import { RootState } from '../store/store'
@@ -28,7 +28,7 @@ const ProductDetail = () => {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { openCart } = React.useContext(LayoutContext)
+  const { openCart } = React.useContext(MainLayoutContext)
   const [quantity, setQuantity] = useState(1)
   const [selectedUnit, setSelectedUnit] = useState<Unit>('g')
   const [reviewText, setReviewText] = useState('')
@@ -56,7 +56,7 @@ const ProductDetail = () => {
   const availableUnits = getAvailableUnits(product)
 
   const handleAddToCart = () => {
-    dispatch(addToCart({ product, quantity, selectedUnit }))
+    dispatch(addToCart({ product, quantity, selectedUnit: selectedUnit as 'g' | 'oz' }))
     openCart()
   }
 

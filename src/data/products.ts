@@ -713,12 +713,22 @@ export const products: Product[] = [
 ]
 
 export const categories = [
-  { name: 'Flores', image: 'categories/flores.jpg', description: 'Flores de cannabis de alta calidad' },
-  { name: 'Prerolados', image: 'categories/prerolados.jpg', description: 'Prerolados de cannabis de alta calidad' },
-  { name: 'Concentrados', image: 'categories/concentrados.jpg', description: 'Concentrados de cannabis' },
-  { name: 'Comestibles', image: 'categories/comestibles.jpg', description: 'Comestibles de cannabis' },
-  { name: 'Dispositivos', image: 'categories/dispositivos.jpg', description: 'Dispositivos para vaporizacion de hierba y concentrados' },
-  { name: 'Semillas', image: 'categories/semillas.jpg', description: 'Selección de semillas de cannabis' },
-  { name: 'Cultivo', image: 'categories/cultivo.jpg', description: 'Productos para el cultivo de cannabis' },
-  { name: 'Accesorios', image: 'categories/accesorios.jpg', description: 'Accesorios para el consumo y conservacion de cannabis' }
+  { name: 'Flores', slug: 'flores', image: 'categories/flores.jpg', description: 'Flores de cannabis de alta calidad' },
+  { name: 'Prerolados', slug: 'prerolados', image: 'categories/prerolados.jpg', description: 'Prerolados de cannabis de alta calidad' },
+  { name: 'Concentrados', slug: 'concentrados', image: 'categories/concentrados.jpg', description: 'Concentrados de cannabis' },
+  { name: 'Comestibles', slug: 'comestibles', image: 'categories/comestibles.jpg', description: 'Comestibles de cannabis' },
+  {
+    name: 'Dispositivos',
+    slug: 'dispositivos',
+    image: 'categories/dispositivos.jpg',
+    description: 'Dispositivos para vaporizacion de hierba y concentrados'
+  },
+  { name: 'Semillas', slug: 'semillas', image: 'categories/semillas.jpg', description: 'Selección de semillas de cannabis' },
+  { name: 'Cultivo', slug: 'cultivo', image: 'categories/cultivo.jpg', description: 'Productos para el cultivo de cannabis' },
+  {
+    name: 'Accesorios',
+    slug: 'accesorios',
+    image: 'categories/accesorios.jpg',
+    description: 'Accesorios para el consumo y conservacion de cannabis'
+  }
 ]

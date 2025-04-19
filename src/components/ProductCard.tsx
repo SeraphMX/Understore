@@ -3,9 +3,9 @@ import { Star } from 'lucide-react'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { MainLayoutContext } from '../layouts/MainLayout'
 import { addToCart } from '../store/slices/cartSlice'
 import { formatPrice, formatUnit, getAvailableUnits, Product, Unit } from '../types'
-import { LayoutContext } from './Layout'
 
 interface ProductCardProps {
   product: Product
@@ -13,12 +13,16 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const dispatch = useDispatch()
-  const { openCart } = React.useContext(LayoutContext)
+  const { openCart } = React.useContext(MainLayoutContext)
   const availableUnits = getAvailableUnits(product)
   const [selectedUnit, setSelectedUnit] = useState<Unit>(product.baseUnit)
 
   const handleAddToCart = () => {
-    dispatch(addToCart({ product, quantity: 1, selectedUnit }))
+    if (selectedUnit === 'g' || selectedUnit === 'oz') {
+      dispatch(addToCart({ product, quantity: 1, selectedUnit }))
+    } else {
+      console.error(`Invalid unit: ${selectedUnit}`)
+    }
     openCart()
   }
 
